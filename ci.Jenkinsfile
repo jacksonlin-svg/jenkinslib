@@ -11,11 +11,10 @@ pipeline{
     
     stages{
 
-        stage("mavenBuild"){
+        stage("Build"){
             steps{
-                script{
-                  mvnHome = tool "maven"             
-                  sh "${mvnHome}/bin/mvn ${buildshell}"  
+                script{           
+                  build.Build(buildType,buildshell)  
                       }
                  }
             }
