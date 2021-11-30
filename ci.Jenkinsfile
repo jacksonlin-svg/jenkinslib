@@ -34,6 +34,14 @@ pipeline{
                   sh "${GradleHome}/bin/gradle ${buildshell}"  
                       }
                  }
+            }
+          stage("npmBuild"){
+            steps{
+                script{
+                  NodeHome = tool "npm"             
+                  sh "${NodeHome}/bin/npm ${buildshell}"  
+                      }
+                 }
             }      
         }
       
