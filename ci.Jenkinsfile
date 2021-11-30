@@ -1,4 +1,6 @@
 //pipeline
+
+string buildshell="${env.buildshell}"
 pipeline{
     agent { node { label "master"}}
     
@@ -9,7 +11,7 @@ pipeline{
             steps{
                 script{
                   mvnHome = tool "maven"             
-                  sh "${mvnHome}/bin/mvn --version"  
+                  sh "${mvnHome}/bin/mvn ${buildshell}"  
                       }
                  }
             }
