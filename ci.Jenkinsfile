@@ -1,5 +1,5 @@
 //pipeline
-@Library('jenkinslibrary@master') _
+@Library('jenkinslibrary@main') _
 def build = new org.devops.build()
 
 //env
