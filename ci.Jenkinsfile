@@ -7,7 +7,7 @@ pipeline{
     
     stages{
 
-        stage("Build"){
+        stage("mavenBuild"){
             steps{
                 script{
                   mvnHome = tool "maven"             
@@ -15,5 +15,13 @@ pipeline{
                       }
                  }
             }
+        stage("AntBuild"){
+            steps{
+                script{
+                  AntHome = tool "ant"             
+                  sh "${AntHome}/bin/ant ${buildshell}"  
+                      }
+                 }
+            }    
         }
        } 
