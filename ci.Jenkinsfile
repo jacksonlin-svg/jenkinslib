@@ -1,5 +1,9 @@
 //pipeline
+@Library('jenkinslibrary@master') _
+def build = new org.devops.build()
 
+//env
+String buildType = "${env.buildType}"
 string buildshell="${env.buildshell}"
 pipeline{
     agent { node { label "master"}}
