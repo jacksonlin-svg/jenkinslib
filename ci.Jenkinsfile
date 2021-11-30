@@ -19,6 +19,7 @@ pipeline{
                       }
                  }
             }
+            /*
         stage("AntBuild"){
             steps{
                 script{
@@ -46,7 +47,7 @@ pipeline{
                   sh "export NODE_HOME=${NodeHome} && export PATH=\$NODE_HOME/bin:\$PATH && ${NodeHome}/bin/npm ${buildshell}"  
                       }
                  }
-            }      
+            }  */    
         }
       
 }
