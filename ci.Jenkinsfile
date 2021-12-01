@@ -1,7 +1,7 @@
 //pipeline
 @Library('jenkinslib') _
 def build = new org.devops.build()
-
+def deploy = new org.devops.deploy()
 //env
 String buildType = "${env.buildType}"
 string buildshell="${env.buildshell}"
@@ -15,6 +15,8 @@ pipeline{
             steps{
                 script{           
                   build.Build(buildType,buildshell)  
+                  //deploy.SaltDeploy("${deployHosts}","test.ping")
+                    deploy.AnsibleDeploy("${deployHosts}","-m ping ")
                       }
                  }
             }
