@@ -5,6 +5,7 @@ def deploy = new org.devops.deploy()
 //env
 String buildType = "${env.buildType}"
 string buildshell="${env.buildshell}"
+String deployHosts = "${env.deployHosts}"
 pipeline{
     agent { node { label "master"}}
     
